@@ -20,10 +20,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="{{ static('icons/apple-touch-icon-144x144.png') }}">
     <link rel="apple-touch-icon" sizes="152x152" href="{{ static('icons/apple-touch-icon-152x152.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ static('icons/apple-touch-icon-180x180.png') }}">
-    <link rel="icon" type="image/png" href="{{ static('icons/favicon-32x32.png') }}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ static('icons/android-chrome-192x192.png') }}" sizes="192x192">
-    <link rel="icon" type="image/png" href="{{ static('icons/favicon-96x96.png') }}" sizes="96x96">
-    <link rel="icon" type="image/png" href="{{ static('icons/favicon-16x16.png') }}" sizes="16x16">
+    <link rel="icon" type="image/svg+xml" href="{{ static('img/techkids-3d-favicon.svg') }}">
     <meta name="msapplication-TileColor" content="#231F20">
     <meta name="msapplication-TileImage" content="{{ static('icons/mstile-144x144.png') }}">
     {# Chrome 39 for Android colour #}
@@ -226,6 +223,28 @@
             }
         </style>
     </noscript>
+    <!-- CẤU HÌNH NHẬN DIỆN THƯƠNG HIỆU TECHKID -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Đổi font chữ toàn hệ thống */
+        body, h1, h2, h3, h4, h5, h6, #nav-list li a { 
+            font-family: 'Be Vietnam Pro', sans-serif !important; 
+        }
+        code, pre, kbd { 
+            font-family: 'JetBrains Mono', monospace !important; 
+        }
+        
+        /* Đổi màu thanh Menu thành Xanh dương */
+        #nav-container { 
+            background-color: #2563EB !important; 
+        }
+        
+        /* Đổi màu các đường link/nút bấm thành Cam vàng */
+        a { color: #F59E0B !important; }
+        a:hover { color: #d97706 !important; }
+        .button, .btn { background-color: #F59E0B !important; border-color: #F59E0B !important; color: white !important;}
+        .button:hover, .btn:hover { background-color: #d97706 !important; }
+    </style>
 </head>
 <body data-theme="{{ SITE_THEME_NAME }}">
 <svg width="0" height="0" style="display: block">
@@ -238,7 +257,7 @@
         <a id="navicon" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
         <ul id="nav-list">
             {% if request.organization is not defined %}
-                <li class="home-nav-element"><a href="{{ url('home') }}">{% include "site-logo-fragment.html" %}</a></li>
+                <li class="home-nav-element"><a href="{{ url('home') }}"><img src="/static/img/techkids-3d-horizontal.svg" alt="TeCHKID Logo" height="40"></a></li>
                 <li class="home-nav-element"><span class="nav-divider"></span></li>
                 <li class="home-menu-item"><a href="{{ url('home') }}" class="nav-home">{{ _('Home') }}</a></li>
                 {% for node in mptt_tree(nav_bar) recursive %}
@@ -428,11 +447,16 @@
     <footer>
         <span id="footer-content">
             <br>
-            {{_('proudly powered by %(dmoj)s', dmoj=safe('<a style="color: #808080" href="https://dmoj.ca"><b>DMOJ</b></a>'))}} |
-            {{_('follow us on %(github)s and %(facebook)s', github=safe('<a style="color: #808080" href="https://github.com/VNOI-Admin/OJ"><b>Github</b></a>'), facebook=safe('<a style="color: #808080" href="https://www.facebook.com/vnoi.wiki"><b>Facebook</b></a>'))}}
-            {% if misc_config.footer %}
+                {% if misc_config.footer %}
                 {{ misc_config.footer|safe }} |
             {% endif %}
+            <div style="text-align: center; margin-top: 15px; font-size: 0.9em; color: #64748B;">
+                Hệ thống TeCHKID được tùy biến từ mã nguồn mở
+                <a href="https://github.com/VNOI-Admin/OJ" target="_blank">VNOJ</a>
+                    (dựa trên <a href="https://dmoj.ca/" target="_blank">DMOJ</a>),
+                    phát hành theo giấy phép AGPL-3.0.
+                <a href="#" target="_blank">Mã nguồn TeCHKID</a>
+            </div>
             <form id="set_language" action="{{ url('set_language') }}" method="post" style="display: inline">
                 {% csrf_token %}
             <input name="next" type="hidden" value="{{ request.get_full_path() }}">

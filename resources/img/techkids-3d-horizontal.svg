@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="270" viewBox="0 0 1320 270" role="img" aria-labelledby="t">
+<title id="t">TECHKIDS ACADEMY 3D horizontal logo</title>
+
+<defs>
+  <linearGradient id="ring" x1="0" y1="0" x2="0.15" y2="1">
+    <stop offset="0" stop-color="#75eaff"/>
+    <stop offset=".18" stop-color="#08bdf4"/>
+    <stop offset=".48" stop-color="#007bb7"/>
+    <stop offset=".7" stop-color="#12b9ee"/>
+    <stop offset="1" stop-color="#005b91"/>
+  </linearGradient>
+  <linearGradient id="red" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ff8c8c"/>
+    <stop offset=".22" stop-color="#ff3434"/>
+    <stop offset=".58" stop-color="#e00000"/>
+    <stop offset="1" stop-color="#8d0000"/>
+  </linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#6be3ff"/>
+    <stop offset=".22" stop-color="#16baff"/>
+    <stop offset=".58" stop-color="#008bd1"/>
+    <stop offset="1" stop-color="#00517f"/>
+  </linearGradient>
+  <linearGradient id="academy" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#70ddff"/>
+    <stop offset=".45" stop-color="#159dcc"/>
+    <stop offset="1" stop-color="#00628e"/>
+  </linearGradient>
+  <filter id="shadow" x="-30%" y="-35%" width="160%" height="190%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+    <feOffset in="blur" dx="2" dy="8" result="off"/>
+    <feComponentTransfer in="off" result="fade">
+      <feFuncA type="linear" slope=".38"/>
+    </feComponentTransfer>
+    <feMerge><feMergeNode in="fade"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="180%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
+    <feOffset in="blur" dx="1" dy="4" result="off"/>
+    <feComponentTransfer in="off" result="fade">
+      <feFuncA type="linear" slope=".34"/>
+    </feComponentTransfer>
+    <feMerge><feMergeNode in="fade"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<rect width="100%" height="100%" fill="#fff"/>
+
+<g transform="translate(12 12) scale(.36)">
+  <circle cx="600" cy="600" r="548" fill="none" stroke="#003e62" stroke-width="3" opacity=".2"/>
+  <circle cx="600" cy="600" r="535" fill="none" stroke="url(#ring)" stroke-width="35" filter="url(#shadow)"/>
+  <circle cx="600" cy="600" r="516" fill="none" stroke="#8cecff" stroke-width="4"/>
+  <text x="600" y="570" text-anchor="middle" font-family="Georgia,serif" font-size="154" font-weight="900">
+    <tspan fill="url(#red)">T</tspan><tspan fill="url(#blue)">K</tspan>
+  </text>
+</g>
+<g transform="translate(455 0)">
+  <text x="0" y="147" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="900" letter-spacing="5" filter="url(#shadow)">
+    <tspan fill="url(#red)">TECH</tspan><tspan fill="url(#blue)">KIDS</tspan>
+  </text>
+  <path d="M4 208 H255 M590 208 H840" stroke="url(#ring)" stroke-width="6" stroke-linecap="round" filter="url(#softShadow)"/>
+  <text x="420" y="230" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700" letter-spacing="10" fill="url(#academy)" filter="url(#softShadow)">ACADEMY</text>
+</g>
+
+</svg>

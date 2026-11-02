@@ -47,3 +47,15 @@ resources/blog-post.css
 resources/theme-toggle.css
 .DS_Store
 .review/
+
+# TeCHKID - khong dua len GitHub
+.env
+dmoj/local_settings.py
+problems/
+node_modules/
+
+# TeCHKID - khong dua len GitHub
+.env
+dmoj/local_settings.py
+problems/
+node_modules/
